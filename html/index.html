@@ -1,1 +1,79 @@
-blank HTML file 
+<!DOCTYPE html>
+    <html>
+    <head> 
+        <meta charset="utf-8">
+        <title>Interactive Webpage!</title>
+
+        <!-- Link the stylesheet for the main page -->
+        <link rel="stylesheet" type="text/css" href="../css/indexStylesheet.css">
+
+    </head>        
+
+        <body>
+
+            <!-- Create a basic frame for the website -->
+            <header>
+                <!-- things like headers and footers and main (big obvious sections) Will contain a div or section called content wrapper
+                That content wrapper will have divs to wrap its contents as well to make everything labeled and blocked and allow for versatility in JS and CSS -->
+                <div class="contentWraper">
+                    
+                    <div id="titleWrapper">
+                        <h1> Welcome to Interactive Webpage</h1>
+                        <p>- Where your interactions are taken seriously</p>
+                    </div>
+                    
+                    <!-- just a division line between the navigation links and the title-->
+                    <hr>
+
+                    <div id="navWrapper">
+                        <nav>
+                            <ul class="navList">
+                                <li> <a href="index.html">Home!</a> </li>
+                                <li> <a href="secondPage.html">secondPage!</a> </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+
+            <main> 
+                <!-- main has sections-->
+                <section class="contentWrapper">
+                    
+                    <!-- this div is a section of the page inside of the section called "arbitrary things"-->
+                    <div class="arbitraryThings">
+                        <h1> Arbitrary title </h1>
+                        <p> arbitrary paragraph </p>
+                        
+                        <hr>
+
+                        <div id="arbitraryImageWrapper">
+                            <p id="arbitraryImageLeft">
+                                This is an arbitrary paragraph to explain an arbitrary image which is used to arbitrary space the left side of an arbitrary image.
+                                <br> This paragraph has no real value for the reader. However.... <span class="hiddenUntilMouseOver"> It's Interactive!!!! YEAAAH BOIII!!</span>
+                            </p>
+                            <img id="arbitraryImage" src="../assets/arbitrary.jpg" alt="arbitrary" width="200">
+                            <p id="arbitraryImageRight"> Yeah this is just an image from google. Its a comic written by <em>David Sipress</em> drawn and published to <strong>fineartamerica</strong> Look <a href="https://fineartamerica.com/featured/new-yorker-september-21st-2009-david-sipress.html">here!</a> </p>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <footer>
+                <div class="contentWrapper">
+
+                    <div id="infoWrapper">
+
+                    </div>
+
+                    <div id="dateWrapper">
+
+                    </div>
+                </div>
+            </footer>
+
+            <!-- Link the script for the main page -->
+            <script src="../scripts/indexScript.js"></script>
+        </body>
+
+    </html>

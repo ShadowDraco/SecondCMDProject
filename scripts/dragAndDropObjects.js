@@ -1,1 +1,1 @@
-blank javascript script 
+//blank javascript script 

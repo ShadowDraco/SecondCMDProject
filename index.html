@@ -5,7 +5,9 @@
         <title>Interactive Webpage!</title>
 
         <!-- Link the stylesheet for the main page -->
-        <link rel="stylesheet" type="text/css" href="../css/indexStylesheet.css">
+        <link rel="stylesheet" type="text/css" href="css/indexStylesheet.css">
+        <!-- Link the interactive objects stylesheet -->
+        <link rel="stylesheet" type="text/css" href="css/interactiveObjects.css">
 
     </head>        
 
@@ -15,11 +17,11 @@
             <header>
                 <!-- things like headers and footers and main (big obvious sections) Will contain a div or section called content wrapper
                 That content wrapper will have divs to wrap its contents as well to make everything labeled and blocked and allow for versatility in JS and CSS -->
-                <div class="contentWraper">
+                <div class="contentWrapper">
                     
                     <div id="titleWrapper">
                         <h1> Welcome to Interactive Webpage</h1>
-                        <p>- Where your interactions are taken seriously</p>
+                        <p>- Where your interactions are taken seriously.    <span class="hiddenUntilMouseOver"> -- Very Very Seriously...</span></p>
                     </div>
                     
                     <!-- just a division line between the navigation links and the title-->
@@ -52,10 +54,22 @@
                                 This is an arbitrary paragraph to explain an arbitrary image which is used to arbitrary space the left side of an arbitrary image.
                                 <br> This paragraph has no real value for the reader. However.... <span class="hiddenUntilMouseOver"> It's Interactive!!!! YEAAAH BOIII!!</span>
                             </p>
-                            <img id="arbitraryImage" src="../assets/arbitrary.jpg" alt="arbitrary" width="200">
-                            <p id="arbitraryImageRight"> Yeah this is just an image from google. Its a comic written by <em>David Sipress</em> drawn and published to <strong>fineartamerica</strong> Look <a href="https://fineartamerica.com/featured/new-yorker-september-21st-2009-david-sipress.html">here!</a> </p>
+                            <img id="arbitraryImage" src="assets/arbitrary.jpg" alt="arbitrary" width="200">
+                            <p id="arbitraryImageRight"> Yeah this is just an image from google. Its a comic written by <em>David Sipress</em>
+                                                         drawn and published to <strong>fineartamerica</strong> Look 
+                                                         <a href="https://fineartamerica.com/featured/new-yorker-september-21st-2009-david-sipress.html" target="blank">here!</a> </p>
                         </div>
                     </div>
+
+                    <p> This is more arbitrary text used to abitrarily space some content for testing new features. 
+                        <span class="enlargeOnMouseOver">This text will get bigger if you select it</span>
+                        But it only does that because I coded it in as you were moving your mouse to try it and you would have never known 
+                        that this is just some arbitrary text which I'm interactively modifying at the will of your own mind. Arbitrarily stumbling
+                        upon this website led to the placement of arbitrary text and you arbitrarily read the text and assigned it the function to <em><q>enlargeOnMouseOver</q></em>
+                        with more arbitrary thoughts which were placed into my arbitrary nueral network which is connected to the nueral netowrk which arbitrarily happens to control
+                        your body. Your brain. Arbitrarily added these functions. Oh did you notice that for some reason your mouse has a lot of power here? ... Arb- just kidding
+                        <br> weird.. <span class="hiddenUntilMouseOver"> You thought I'd say it... hah... well... I did!!! <span class="enlargeOnMouseOver">ARBITRARY!</span>
+                    </p>
                 </section>
             </main>
 
@@ -63,17 +77,19 @@
                 <div class="contentWrapper">
 
                     <div id="infoWrapper">
-
+                        <p> This page was written by Frolic </p>
                     </div>
 
                     <div id="dateWrapper">
-
+                        <p id="dateStampEl"> This is crazy! Today's date is </p>
                     </div>
                 </div>
             </footer>
 
             <!-- Link the script for the main page -->
-            <script src="../scripts/indexScript.js"></script>
+            <script src="scripts/indexScript.js"></script>
+            <!-- Link the script for interactive bits of the page -->
+            <script src="scripts/interactiveObjects.js"></script>
         </body>
 
     </html>

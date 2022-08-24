@@ -1,0 +1,14 @@
+.hiddenUntilMouseOver {
+    opacity:0;
+
+    transition: opacity 0.5s;
+}
+
+.enlargeOnMouseOver {
+    transition:font-size 1s, font-weight 1s;
+}
+
+.enlargedText {
+    font-size:x-large;
+    font-weight:300;
+}

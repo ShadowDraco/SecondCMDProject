@@ -1,11 +1,4 @@
 
-let hiddenUntilMouseOverEls = document.querySelectorAll('.hiddenUntilMouseOver');
-hiddenUntilMouseOverEls.forEach(function (hiddenEl) {
-    
-    console.log(hiddenEl);
-    hiddenEl.onmouseenter = function() {
-        console.log("mouseOver");
-        hiddenEl.style.display = "block";
-    }
-
-});
+// update the footer with the current date and time on page load
+const dateStamp = document.getElementById('dateStampEl');
+dateStamp.innerText = dateStamp.innerText + " " + Date();

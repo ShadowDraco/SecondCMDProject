@@ -12,3 +12,40 @@
     font-size:x-large;
     font-weight:300;
 }
+
+.draggableThings {
+    padding:5px;
+    outline:auto;
+    outline-style:double;
+}
+
+.DragAndDropArea {
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    padding:5px;
+}
+
+.item-container {
+    padding:3px;
+    outline:auto;
+    outline-style:auto;
+    height:100%;
+}
+
+.item {
+    width:50%;
+    height:fit-content;
+    margin:10px;
+    padding:1px;
+    padding-bottom:4px;
+    outline:groove;
+}
+
+.hideItem {
+    display:none;
+}
+
+.drag-over {
+    border:dashed 3px rgb(85, 85, 85);
+}

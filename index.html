@@ -48,29 +48,108 @@
                         <p> arbitrary paragraph </p>
                         
                         <hr>
-
+                        <!-- Image wrapper is  div that holds the image and its captions inside of a grid layout-->
                         <div id="arbitraryImageWrapper">
                             <p id="arbitraryImageLeft">
                                 This is an arbitrary paragraph to explain an arbitrary image which is used to arbitrary space the left side of an arbitrary image.
                                 <br> This paragraph has no real value for the reader. However.... <span class="hiddenUntilMouseOver"> It's Interactive!!!! YEAAAH BOIII!!</span>
                             </p>
+                           
                             <img id="arbitraryImage" src="assets/arbitrary.jpg" alt="arbitrary" width="200">
+                           
                             <p id="arbitraryImageRight"> Yeah this is just an image from google. Its a comic written by <em>David Sipress</em>
                                                          drawn and published to <strong>fineartamerica</strong> Look 
-                                                         <a href="https://fineartamerica.com/featured/new-yorker-september-21st-2009-david-sipress.html" target="blank">here!</a> </p>
+                                                         <a href="https://fineartamerica.com/featured/new-yorker-september-21st-2009-david-sipress.html" target="blank">here!</a> 
+                            </p>
                         </div>
                     </div>
 
+                    <!-- This section of the page is not contained in divs purposely to see how the overall content layout is managed-->
                     <p> This is more arbitrary text used to abitrarily space some content for testing new features. 
                         <span class="enlargeOnMouseOver">This text will get bigger if you select it</span>
                         But it only does that because I coded it in as you were moving your mouse to try it and you would have never known 
                         that this is just some arbitrary text which I'm interactively modifying at the will of your own mind. Arbitrarily stumbling
-                        upon this website led to the placement of arbitrary text and you arbitrarily read the text and assigned it the function to <em><q>enlargeOnMouseOver</q></em>
-                        with more arbitrary thoughts which were placed into my arbitrary nueral network which is connected to the nueral netowrk which arbitrarily happens to control
-                        your body. Your brain. Arbitrarily added these functions. Oh did you notice that for some reason your mouse has a lot of power here? ... Arb- just kidding
+                        upon this website led to the placement of arbitrary text and you arbitrarily read the text and assigned it the function to 
+                        <em><q>enlargeOnMouseOver</q></em>
+                        with more arbitrary thoughts which were placed into my arbitrary nueral network which is connected to the nueral netowrk 
+                        which arbitrarily happens to control
+                        your body. Your brain. Arbitrarily added these functions. Oh did you notice that for some reason your mouse has a lot of power here? 
+                        ... Arb- just kidding
                         <br> weird.. <span class="hiddenUntilMouseOver"> You thought I'd say it... hah... well... I did!!! <span class="enlargeOnMouseOver">ARBITRARY!</span>
                     </p>
+
+                    <!-- this is another main section, clearly defined by a double outline and by having its own personal features-->
+                    <div class="draggableThings"> 
+                        <!-- just used for looking at layouts and seeing how everything flows naturally-->
+                        <p> Arbitrary spacing... <span class="hiddenUntilMouseOver enlargeOnMouseOver">... You know the drill</span></p>
+                        
+                        <!-- class DragAndDrop has an object that should be created, and each drag and drop object has its own id-->
+                        <!-- Drag and drop is customizable and scalable-->
+                        <div class="DragAndDropArea" id="item-sorter">
+                            
+                            <!-- items are created as div class item, with p class label inside (Then whatever else after that for each item)
+                                they are organized after page load)-->
+                            <div class="item"> <p class="label"></p> <p> Birds </p> </div>
+                            <div class="item"> <p class="label"></p> <p> Cats </p> </div>
+                            <div class="item"> <p class="label"></p> <p> Dogs </p> </div>
+                            <div class="item"> <p class="label"></p> <p> Siamese</p> </div>
+                            <div class="item"> <p class="label"></p> <p> German Shepard</p> </div>
+
+                            <!-- item containers similar to items, div class item-container, p class label, 
+                                each item container will have items organized into it for later-->
+                            <div class="item-container">
+                                <p class="label"> </p>
+                            </div>
+
+                            <div class="item-container">
+                                <p class="label"> </p>
+                            </div>
+
+                            <div class="item-container">
+                                <p class="label"> </p>
+                            </div>
+                            
+                            
+                        </div> <!-- End Item-Sorter-->
+
+                        <!-- .. arbitrary spacing.. that's who... -->
+                        <p class="hiddenUntilMouseOver enlargeOnMouseOver"> Guess who it issss</p>
+
+                        <!-- Another drag and drop box for testing new stuff-->
+                        <div class="DragAndDropArea" id="content-key"> <!-- Place something in the "lock" to show new content???-->
+                            
+                            <!-- items are created as div class item, with p class label inside (Then whatever else after that for each item)
+                                they are organized after page load)-->
+                            <div class="item"> <p class="label"></p> <p class="'key"> ImageKey </p> </div>
+                            <div class="item"> <p class="label"></p> <p class="'key"> GameKey </p> </div>
+                            <div class="item"> <p class="label"></p> <p class="'key"> TextKey </p> </div>
+
+
+                            <!-- item containers similar to items, div class item-container, p class label, 
+                                each item container will have items organized into it for later-->
+                            <div class="item-container">
+                                <p class="label"> </p>
+                            </div>
+
+                            <div class="item-container">
+                                <p class="label"> </p>
+                            </div>
+
+                            <div class="item-container">
+                                <p class="label"> </p>
+                            </div>
+
+                            <div class="item-container">
+                                <p class="label"> </p>
+                                <p> Place a key to unlock new things!!</p>
+                            </div>
+                            
+                            
+                        </div> <!-- End Content-Key-->
+
+                    </div>
                 </section>
+
             </main>
 
             <footer>

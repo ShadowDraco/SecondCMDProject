@@ -40,8 +40,8 @@ nav li {
 
 #arbitraryImageWrapper {
     display:grid;
-    grid-template-columns: 1f 1f 1f;
-    grid-gap: 20px;
+    grid-template-columns: repeat(3, 1f);
+    grid-gap: 10px;
 }
 
 #arbitraryImageLeft {
@@ -51,7 +51,7 @@ nav li {
 
 .arbitraryImage {
     outline:auto;
-    outline-color:burlywood;
+    outline-color:rgb(204, 148, 75);
     outline-style:groove;
     grid-row:1;
     grid-column:2;

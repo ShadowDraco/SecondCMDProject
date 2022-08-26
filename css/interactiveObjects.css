@@ -1,3 +1,5 @@
+/* interactive mouse stuff */
+
 .hiddenUntilMouseOver {
     opacity:0;
 
@@ -13,12 +15,8 @@
     font-weight:300;
 }
 
-.draggableThings {
-    padding:5px;
-    outline:auto;
-    outline-style:double;
-}
 
+/* All drag and drop stuff */
 .DragAndDropArea {
     display:grid;
     grid-template-columns: repeat(3, 1fr);
@@ -49,6 +47,8 @@
 .drag-over {
     border:dashed 3px rgb(85, 85, 85);
 }
+
+/* Hidden content with unlockable keys stuff */
 
 .hiddenContent .hidden {
     display:none;

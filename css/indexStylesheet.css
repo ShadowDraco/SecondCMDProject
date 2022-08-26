@@ -66,6 +66,14 @@ all the arbitrary things */
     grid-column:3;
 }
 
+/* style for the second section in the page */
+
+.draggableThings {
+    padding:5px;
+    outline:auto;
+    outline-style:double;
+}
+
 /* Every content wrapper on the page will animate when hovered */
 .contentWrapper {
    padding:3px;
@@ -100,6 +108,8 @@ all the arbitrary things */
     background-color:darkslategrey;
     padding:8px;
 }
+
+/* style for each hidden content area */
 
 #snakeCanvas {
     border:4px groove #02251a;

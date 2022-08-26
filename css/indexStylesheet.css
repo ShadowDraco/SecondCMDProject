@@ -3,6 +3,7 @@ body {
     background-color:rgb(218, 218, 218);
 }
 
+/* Everything in the top of the page */
 header {
     padding-top:2px;
     outline:darkslategray;
@@ -30,6 +31,9 @@ nav li {
     display:inline;
     list-style-type:none;
 }
+
+/* The first section of the main body 
+all the arbitrary things */
 
 .arbitraryThings {
     outline:darkslateblue;
@@ -62,6 +66,7 @@ nav li {
     grid-column:3;
 }
 
+/* Every content wrapper on the page will animate when hovered */
 .contentWrapper {
    padding:3px;
    background-color:rgb(230, 195, 150);
@@ -71,4 +76,41 @@ nav li {
 
 .contentWrapper:hover {
     background-color:rgb(199, 170, 132);
+}
+
+/* the hidden content to do with key unlocks */
+
+.game-grid { 
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap:0px;
+}
+.image-grid { 
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap:0px;
+}
+.login-grid { 
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap:0px;
+}
+ /* Border surrounding the grids */
+.border {
+    background-color:darkslategrey;
+    padding:8px;
+}
+
+#snakeCanvas {
+    border:4px groove #02251a;
+}
+
+#loginForm {
+    border:4px groove #c78100;
+    width:400px;
+    height:150px;
+}
+
+#funnyImage {
+    border:4px groove #0fbeca;
 }

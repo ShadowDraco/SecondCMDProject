@@ -1,3 +1,13 @@
+
+// Current key is used to decide whether or not to show content from the .hiddenContent class
+var currentKey = 'none';
+// These are the items in the hidden content class
+let gameCanvas = document.querySelector('.gameCanvas');
+let loginForm = document.querySelector('.loginForm');
+let funnyImage = document.querySelector('.funnyImage');
+
+
+// These are elements that have some interaction
 let enlargableElements = document.querySelectorAll('.enlargeOnMouseOver');
 let hiddenUntilMouseOverEls = document.querySelectorAll('.hiddenUntilMouseOver');
 
@@ -40,7 +50,29 @@ enlargableElements.forEach(function (enlargableEl) {
 });
 
 
-/* Drag and drop objects */ 
+/* Unlock content with drag and drop "keys" */
+var unlockCurrentKey = function() {
+
+    gameCanvas.classList.add('hidden');
+    loginForm.classList.add('hidden');
+    funnyImage.classList.add('hidden');
+
+    if (currentKey == 'GameKey') {
+        gameCanvas.classList.remove('hidden');
+    }
+    if (currentKey == 'TextKey') {
+        loginForm.classList.remove('hidden');
+    }
+    if (currentKey == 'ImageKey') {
+        funnyImage.classList.remove('hidden');
+    }
+}
+
+
+/*  Drag 
+    and drop
+    objects 
+*/ 
 
 function dragStart(e) {
     setTimeout(() => {
@@ -71,12 +103,29 @@ function drop(e) {
         if (item.classList.contains('hideItem')) {
             // Give item to new container
             e.target.appendChild(item); 
-            // display it
-            item.classList.remove('hideItem');
-        }
-        
-    });
 
+            // Check if the item is in the last container (the lock)
+            let lock = document.querySelector('#content-key').lastElementChild;
+            
+            // Get the item
+            let itemKey = lock.lastElementChild;  // (Check it before removing hideItem so that we know this item is the current item being interacted with)
+            if (itemKey.querySelector('.key')) {
+                // If its an item in the lock, get the element with the key name
+                let key = itemKey.querySelector('.key');
+                // Set the key for the page
+                currentKey = key.innerHTML;
+            } else {
+                // If there is no key in the lock - reset
+                currentKey = 'none';
+            }
+            unlockCurrentKey();
+        }
+
+            
+            // display the item
+            item.classList.remove('hideItem');
+    });
+        
 }
 // DragAndDropArea is an object that takes a certain layout in the html and handles itself entirely
 // Takes the id of whatever has the class .DragAndDropArea to start creating itself 
@@ -107,13 +156,19 @@ var DragAndDropArea = function(id) {
         });
 
         // Give  containers eventListeners
+        let containerNum = 0;
         this.containers.forEach(function(container) {
-        
+            let containerLabel = container.querySelector('.label');
+            // Set the label so it can be identified, but hide it from the page
+            containerLabel.innerHTML = "Container " + (containerNum+1);
+            containerLabel.style.display="none";
+
             container.addEventListener('dragenter', dragEnter);
             container.addEventListener('dragover', dragOver);
             container.addEventListener('dragleave', dragLeave);
             container.addEventListener('drop', drop);
 
+            containerNum++;
         });
 
         // Set it back to 0 so it can be used for organizing

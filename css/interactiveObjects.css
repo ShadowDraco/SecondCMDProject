@@ -49,3 +49,7 @@
 .drag-over {
     border:dashed 3px rgb(85, 85, 85);
 }
+
+.hiddenContent .hidden {
+    display:none;
+}

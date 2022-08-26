@@ -120,9 +120,9 @@
                             
                             <!-- items are created as div class item, with p class label inside (Then whatever else after that for each item)
                                 they are organized after page load)-->
-                            <div class="item"> <p class="label"></p> <p class="'key"> ImageKey </p> </div>
-                            <div class="item"> <p class="label"></p> <p class="'key"> GameKey </p> </div>
-                            <div class="item"> <p class="label"></p> <p class="'key"> TextKey </p> </div>
+                            <div class="item"> <p class="label"></p> <p class="key">ImageKey</p> </div>
+                            <div class="item"> <p class="label"></p> <p class="key">GameKey</p> </div>
+                            <div class="item"> <p class="label"></p> <p class="key">TextKey</p> </div>
 
 
                             <!-- item containers similar to items, div class item-container, p class label, 
@@ -147,6 +147,50 @@
                             
                         </div> <!-- End Content-Key-->
 
+                    </div>
+
+                    <div class="hiddenContent"> 
+                        
+                        <div class="gameCanvas hidden">
+                            
+                            <div class="border"> </div>
+                            <div class="game-grid"> 
+                                <div class="border"></div> 
+                                <canvas id="snakeCanvas" width="400" height="400"></canvas> 
+                                <div class="border"></div>
+                            </div>
+                            <div class="border"></div>
+                            
+                        </div>
+
+                        <div class="loginForm hidden">
+                            
+                            <div class="border"> </div>
+                            <div class="login-grid"> 
+                                <div class="border"></div> 
+                                    <form id="loginForm">
+                                        <label for="username">Username:</label><br>
+                                        <input type="text" id="username" name="username"><br>
+                                        <label for="password">Password:</label><br>
+                                        <input type="text"id="password"name="password">
+                                    </form>
+                                <div class="border"></div>
+                            </div>
+                            <div class="border"></div>
+                        
+                        </div>
+
+                        <div class="funnyImage hidden">
+                            
+                            <div class="border"> </div>
+                            <div class="image-grid"> 
+                                <div class="border"></div> 
+                                <img id="funnyImage" src="assets/funnyImage.jpg" alt="a funny image that was locked by a key!" width="400">
+                                <div class="border"></div>
+                            </div>
+                            <div class="border"></div>
+                        
+                        </div>
                     </div>
                 </section>
 

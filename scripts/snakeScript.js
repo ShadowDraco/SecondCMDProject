@@ -14,9 +14,6 @@ var keys = [];
 var keyDown = function(e) {
     keys[e.keyCode] = true;
 }
-var keyUp = function(e) {
-    keys[e.keyCode] = false;
-}
 
 //Start a new game
 var activateGame = function() {
@@ -27,10 +24,10 @@ var activateGame = function() {
     ctx = gameContext;
     // Add event listeners for keypresses
     document.addEventListener("keydown", keyDown);
-    document.addEventListener("keyup", keyUp);
+
     //create a new snake
     createSnake();
-    interval = setInterval(drawGame, 100);
+    interval = setInterval(drawGame, 10);
 }
 
 var deactivateGame = function() {
@@ -57,33 +54,37 @@ var Snake = function(xpos, ypos) {
     this.color = "#0EFF0E";
 
     this.addVelocity = function() {
-        console.log("adding");
         // Up
         if (keys[38]) {
-            console.log("up");
+            // set down to false
+            keys[40] = false;
             if (this.yvel > -this.speed) {
-                this.yvel-=0.01;
+                this.yvel-=0.1;
             }
+
         }
         // Down
         if (keys[40]) {
-            console.log("down");
+            // set up to false
+            keys[38] = false;
             if (this.yvel < this.speed) {
-                this.yvel+=0.01;
+                this.yvel+=0.1;
             }
         }
         // Left
         if (keys[37]) {
-            console.log("left");
+            // set right to false
+            keys[39] = false;
             if (this.xvel > -this.speed) {
-                this.xvel-=0.01;
+                this.xvel-=0.1;
             }
         }
         // Righx
         if (keys[39]) {
-            console.log("right");
+            // set left false
+            keys[37] = false;
             if (this.xvel < this.speed) {
-                this.xvel+=0.01;
+                this.xvel+=0.1;
             }
         }
     }

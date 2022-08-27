@@ -59,6 +59,7 @@ var unlockCurrentKey = function() {
 
     if (currentKey == 'GameKey') {
         gameCanvas.classList.remove('hidden');
+        activateGame();
     }
     if (currentKey == 'TextKey') {
         loginForm.classList.remove('hidden');

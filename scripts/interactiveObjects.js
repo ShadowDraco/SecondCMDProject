@@ -62,13 +62,13 @@ var unlockCurrentKey = function() {
         gameCanvas.classList.remove('hidden');
         activateGame();
     }
-    if (currentKey == 'TextKey') {
+    else if (currentKey == 'TextKey') {
         // reveal the hidden content 
         loginForm.classList.remove('hidden');
         // Sees if a user exists and shows the correct form
         checkCurrentUser();
     }
-    if (currentKey == 'ImageKey') {
+    else if (currentKey == 'ImageKey') {
         funnyImage.classList.remove('hidden');
     }
 }

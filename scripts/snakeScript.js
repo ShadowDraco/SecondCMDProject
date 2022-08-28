@@ -21,7 +21,6 @@ var keyDown = function(e) {
         currentDirection = e.keyCode;
     }
 
-
 }
 
 //Start a new game

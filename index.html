@@ -149,16 +149,21 @@
 
                     </div>
 
+                    <!-- Section of the page shows only one part at a time, game canvas, log in form, and an image-->
                     <div class="hiddenContent"> 
                         
                         <div class="gameCanvas hidden">
-                            
+                            <!-- borders surrounding a canvas-->
                             <div class="border"> </div>
+
                             <div class="game-grid"> 
+                                <!-- These elements are styled into a grid-->
                                 <div class="border"></div> 
                                 <canvas id="snakeCanvas" width="400" height="400"></canvas> 
                                 <div class="border"></div>
+
                             </div>
+
                             <div class="border"></div>
                             
                         </div>
@@ -166,16 +171,34 @@
                         <div class="loginForm hidden">
                             
                             <div class="border"> </div>
+
                             <div class="login-grid"> 
+                               <!-- Grid -->
                                 <div class="border"></div> 
-                                    <form id="loginForm">
+                                <!-- signup form will save a username and password which will save progress in games on log in-->
+                                    <form action="signup" method="post" class="hidden" id="signupForm">
+                                        <p class="formLabel"> Signup: </p> <br>
                                         <label for="username">Username:</label><br>
                                         <input type="text" id="username" name="username"><br>
                                         <label for="password">Password:</label><br>
                                         <input type="text"id="password"name="password">
+
+                                        <input type="submit">
                                     </form>
+                                <!-- login form will get the user and the values stored when used-->
+                                    <form action="login" method="get" class="hidden" id="loginForm">
+                                        <p class="formLabel"> Login: </p> <br>
+                                        <label for="username">Username:</label><br>
+                                        <input type="text" id="username" name="username"><br>
+                                        <label for="password">Password:</label><br>
+                                        <input type="text" id="password"name="password">
+
+                                        <input type="submit">
+                                    </form>
+
                                 <div class="border"></div>
                             </div>
+
                             <div class="border"></div>
                         
                         </div>
@@ -183,11 +206,15 @@
                         <div class="funnyImage hidden">
                             
                             <div class="border"> </div>
+
                             <div class="image-grid"> 
+                                <!-- also a grid-->
                                 <div class="border"></div> 
                                 <img id="funnyImage" src="assets/funnyImage.jpg" alt="a funny image that was locked by a key!" width="400">
                                 <div class="border"></div>
                             </div>
+
+
                             <div class="border"></div>
                         
                         </div>

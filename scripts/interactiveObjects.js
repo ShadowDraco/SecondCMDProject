@@ -61,7 +61,10 @@ var unlockCurrentKey = function() {
         gameCanvas.classList.remove('hidden');
     }
     if (currentKey == 'TextKey') {
+        // reveal the hidden content 
         loginForm.classList.remove('hidden');
+        // Sees if a user exists and shows the correct form
+        checkCurrentUser();
     }
     if (currentKey == 'ImageKey') {
         funnyImage.classList.remove('hidden');
@@ -191,6 +194,7 @@ var DragAndDropArea = function(id) {
 
 }
 
+// Create drag and drop objects
 let itemSorter = new DragAndDropArea('item-sorter');
 itemSorter.setItemsAndContainers();
 

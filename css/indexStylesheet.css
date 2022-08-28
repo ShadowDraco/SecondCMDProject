@@ -124,3 +124,11 @@ all the arbitrary things */
 #funnyImage {
     border:4px groove #0fbeca;
 }
+
+/* Login and sign up forms */ 
+
+.formLabel {
+    border:2px black auto;
+    height:fit-content;
+    padding:-10px;
+}

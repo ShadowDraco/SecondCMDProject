@@ -53,12 +53,14 @@ enlargableElements.forEach(function (enlargableEl) {
 /* Unlock content with drag and drop "keys" */
 var unlockCurrentKey = function() {
 
+    // add the hidden class to everything so the correct thing can be unhidden
     gameCanvas.classList.add('hidden');
     loginForm.classList.add('hidden');
     funnyImage.classList.add('hidden');
 
     if (currentKey == 'GameKey') {
         gameCanvas.classList.remove('hidden');
+        activateGame();
     }
     if (currentKey == 'TextKey') {
         loginForm.classList.remove('hidden');
@@ -75,12 +77,14 @@ var unlockCurrentKey = function() {
 */ 
 
 function dragStart(e) {
+    // Wait until the object is dropped 
     setTimeout(() => {
         e.target.classList.add('hideItem');
     }, 0);
 }
 
 function dragEnter(e) {
+    // Keep the item from doing default behaiviors and make it do .drag-over instead
     e.preventDefault();
     e.target.classList.add('drag-over');
 }

@@ -106,13 +106,14 @@ all the arbitrary things */
  /* Border surrounding the grids */
 .border {
     background-color:darkslategrey;
-    padding:8px;
 }
 
 /* style for each hidden content area */
 
 #snakeCanvas {
-    border:4px groove #02251a;
+    border:4px groove #0170a7;
+    background-color:black;
+    margin-right:0px;
 }
 
 #loginForm {

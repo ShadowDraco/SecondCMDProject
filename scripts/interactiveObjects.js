@@ -65,12 +65,13 @@ var unlockCurrentKey = function() {
     else if (currentKey == 'TextKey') {
         // reveal the hidden content 
         loginForm.classList.remove('hidden');
-        // Sees if a user exists and shows the correct form
-        checkCurrentUser();
+        // show the correct form
+        checkCurrentForm();
     }
     else if (currentKey == 'ImageKey') {
         funnyImage.classList.remove('hidden');
     }
+    
 }
 
 

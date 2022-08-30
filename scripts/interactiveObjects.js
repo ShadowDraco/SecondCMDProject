@@ -200,8 +200,10 @@ var DragAndDropArea = function(id) {
 }
 
 // Create drag and drop objects
-let itemSorter = new DragAndDropArea('item-sorter');
-itemSorter.setItemsAndContainers();
+if (document.URL.includes('index.html')) { // if the correct page is loaded
+    let itemSorter = new DragAndDropArea('item-sorter');
+    itemSorter.setItemsAndContainers();
 
-let contentKey = new DragAndDropArea('content-key');
-contentKey.setItemsAndContainers();
+    let contentKey = new DragAndDropArea('content-key');
+    contentKey.setItemsAndContainers();
+}

@@ -36,13 +36,19 @@ var SIGNUP = function(e, signupForm) {
         // add username and password to localStorage 
         let previousUsers = JSON.parse(localStorage.getItem('allUsers'));
         let previousPasswords = JSON.parse(localStorage.getItem('allPasswords'));
+        // add scores
+        let previousScores = JSON.parse(localStorage.getItem('allScores'));
 
         previousUsers[previousUsers.length] = user; // add current user into previous users
         previousPasswords[previousPasswords.length] = password; // add current password into previous users
-
+        // new users have a score of 0
+        previousScores[previousScores.length] = 0; 
         // Update local storage users, passwords, and whether anyone has signed up before
         localStorage.setItem('allUsers', JSON.stringify(previousUsers));
         localStorage.setItem('allPasswords', JSON.stringify(previousPasswords));
+        // add the scores to storage
+        localStorage.setItem('allScores', JSON.stringify(previousScores));
+        
         localStorage.setItem('hasAUser', true);
 
         // for this session allow there to be a user and let all pages know someone signed in
@@ -50,6 +56,7 @@ var SIGNUP = function(e, signupForm) {
         sessionStorage.setItem('currentUser', user);
 
         setUserEls();
+
     }
 }
 
@@ -95,9 +102,13 @@ var checkLocalStorage = function() {
     } else {
         // if there are no uses make them
         let allUsers = ['bob', 'marley', 'john', 'brown'];
+        let allScores = [Math.round(Math.random(10) * 10), Math.round(Math.random(10) * 10), Math.round(Math.random(10) * 10), Math.round(Math.random(10) * 10)];
         localStorage.setItem('allUsers', JSON.stringify(allUsers));
         localStorage.setItem('allPasswords', JSON.stringify(allUsers)); // passwords for generic users are generic
+        // Add arbitrary scores to the list 
+        localStorage.setItem('allScores', JSON.stringify(allScores));
         localStorage.setItem('hasAUser', false);
+        localStorage.setItem('allTimeScore', 10);
     }
 
     // check current user will happen either way

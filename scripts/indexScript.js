@@ -32,7 +32,6 @@ var SIGNUP = function(e, signupForm) {
         // password only exists here so its not saved on the page constantly
         let password = signupForm.elements['password'].value
 
-
         // add username and password to localStorage 
         let previousUsers = JSON.parse(localStorage.getItem('allUsers'));
         let previousPasswords = JSON.parse(localStorage.getItem('allPasswords'));
@@ -131,7 +130,7 @@ var checkCurrentUser = function() {
         user = sessionStorage.getItem('currentUser');
         setUserEls();
     } else {
-        user = 'none';
+        user = '';
     }
 }
 

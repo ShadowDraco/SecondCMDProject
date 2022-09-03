@@ -52,6 +52,7 @@ var activateGame = function() {
     // Add event listeners for keypresses
     document.addEventListener("keydown", keyDown);
     currentDirection = 0; // reset current direction so snake doesn't start moving on startup
+    firstKey = false; // no first key is pressed
 
     //create a new snake and an apple
     createSnake();
@@ -69,7 +70,6 @@ var checkScore = function() {
     // check if a person is signed in to set the score
 
     if (JSON.parse(sessionStorage.getItem('signedIn'))) {
-        console.log('signed in');
 
         let userIndex;
         let localUsers = JSON.parse(localStorage.getItem('allUsers'));
@@ -78,17 +78,13 @@ var checkScore = function() {
         for (let i = 0; i < localUsers.length; i++) {
             if (localUsers[i] == user) {
                 userIndex = i;
-                console.log(localUsers[i]);
-                console.log(user);
+                break;
             }
         }
 
         // Set global scores in local storage
         let localUser = localUsers[userIndex];
         let localScore = localScores[userIndex];
-
-        console.log("current user: ");
-        console.log(JSON.parse(localStorage.getItem('allUsers')[userIndex]));
 
         // Set scores for current session
         let currentScore = JSON.parse(sessionStorage.getItem('currentTopScore'));
@@ -101,7 +97,8 @@ var checkScore = function() {
         // check the current user compared to the local storage list of users and then set that users's top score
         if (snake.score > localScore) {
         // add a top score for the user
-            localScore = snake.score;
+            localScores[userIndex] = snake.score;
+            localStorage.setItem('allScores', JSON.stringify(localScores));
         }
 
         // set the all time global high score
@@ -109,16 +106,22 @@ var checkScore = function() {
             localStorage.setItem('allTimeScore', snake.score);
         }
 
+        console.log('signed in');
         console.log(currentScore);
+        console.log(user);
         console.log(localUser);
         console.log(snake.score);
         console.log(localScore);
+
+        console.log(localUsers);
+        console.log(localScores);
     }
 }
 
 var resetGame = function() {
   
     currentDirection = 0; // reset current direction so snake doesn't start moving on startup
+    firstKey = false; // no first key is pressed
 
     //create a new snake and an apple
     createSnake();
@@ -187,6 +190,7 @@ var Snake = function(xpos, ypos) {
 
     this.color = "#0EFF0E";
 
+    this.firstPart = false;
     this.parts = [];
 
     this.move = function() {
@@ -228,9 +232,11 @@ var Snake = function(xpos, ypos) {
     this.update = function() {
 
         // Dont spawn the first snake part until after the first direction is set 
-        if (firstKey) {
+        if (firstKey && !this.firstPart) {
             // Add the first Part
             this.parts.push(new SnakePart(this.pX, this.pY));
+            this.firstPart = true;
+            console.log('first part spawned');
         }
         // set the previous x
         this.pX = this.x;
@@ -238,11 +244,10 @@ var Snake = function(xpos, ypos) {
     
         // Update snake parts
         // The first part can't be updated with the others because of the -1
-        if (!firstKey) {
-            
-        } else {
-            this.parts[0].update(this.pX, this.pY);
+        if (firstKey) {
+            this.parts[0].update(this.pX, this.pY);   
         }
+
         for (let i = 1; i < this.parts.length; i++) {
             let prevPart = this.parts[i-1];
             let part = this.parts[i];
